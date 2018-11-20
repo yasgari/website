@@ -12,9 +12,13 @@
 
 /* Add a hover effect if you want */
 .fa:hover {
-    opacity: 0.85;
+    width: 80px;
+    padding: 25px;
     text-decoration: none;
     
+}
+a:hover{
+    text-decoration: none;
 }
 
 /* Set a specific color for each brand */
