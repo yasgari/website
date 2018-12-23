@@ -137,7 +137,8 @@ button:focus {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
-}   
+}  
+
 
 .back_top {
     text-align: center;
@@ -151,6 +152,7 @@ button:focus {
     border-radius: 3px;
     right: 20px;
     transition: all 0.5s;
+    content:url("../pics/chevron-up.png")
 }
 
 .back_top i {
@@ -159,7 +161,15 @@ button:focus {
     font-size: 12px;
     display: block;
 }
-
+.asterisk{
+    content:url("../pics/asterisk.png")
+}
+.arrow-down{
+    content:url("../pics/down-arrow.png")
+}
+.email{
+    content:url("../pics/mail.png")
+}
 /*==========================
         2.HELPER
 ============================*/
@@ -425,7 +435,7 @@ button:focus {
 }
 
 .custom-nav .navbar-brand.logo img {
-    height: 80px;
+    height: 70px;
 
 }
 
@@ -858,7 +868,7 @@ button:focus {
 }
 
 /*==========================
-        12.GREATE PEOPLE
+        12.GREAT PEOPLE
 ============================*/
 
 .logo_img img {
@@ -999,8 +1009,20 @@ button:focus {
     transform: rotate(360deg);
 }
 
-.copy-rights {
-    line-height: 43px;
+.facebook{
+    content:url("../pics/Facebook.png");
+}
+.github{
+    content:url("../pics/Github.png");
+}
+.twitter{
+    content:url("../pics/Twitter.png");
+}
+.instagram{
+    content:url("../pics/Instagram.png");
+}
+.linkedin{
+    content:url("../pics/Linkedin.png");
 }
 
 /*==========================
