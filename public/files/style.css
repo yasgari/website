@@ -425,7 +425,8 @@ button:focus {
 }
 
 .custom-nav .navbar-brand.logo img {
-    height: 28px;
+    height: 80px;
+
 }
 
 /*==========================
@@ -433,7 +434,7 @@ button:focus {
 ============================*/
 
 .home-bg {
-    background-image: url(../images/home-bg.jpg);
+    background-image: url("pics/wilmington.jpg");
     background-position: center center;
     background-size: cover;
     position: relative;
