@@ -435,7 +435,7 @@ button:focus {
 }
 
 .custom-nav .navbar-brand.logo img {
-    height: 70px;
+    height: 60px;
 
 }
 
@@ -933,6 +933,12 @@ button:focus {
     font-size: 35px;
     line-height: 65px;
     background-color: #fff;
+}
+
+.img-fluid{
+    height:auto;
+    max-height: 300px;
+    max-width: 300px;
 }
 
 /*==========================
