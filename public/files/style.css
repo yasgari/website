@@ -940,6 +940,31 @@ button:focus {
     max-height: 300px;
     max-width: 300px;
 }
+#more {display: none;}
+#more1{display: none;}
+
+.btn-info {
+
+    font-size: 13px;
+    color: rgba(39, 59, 229, 0.75);
+    letter-spacing: 1px;
+    line-height: 10px;
+    border: 2px solid rgba(39, 59, 229, 0.75);
+    border-radius: 40px;
+    background: transparent;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .btn-info:hover {
+    color: #FFF;
+    background: rgba(39, 59, 229, 0.75);
+    border: 2px solid rgba(39, 59, 229, 0.75);
+  }
+  .btn:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #00b3db;
+    border-color: #285e8e; /*set the color you want here*/
+}
 
 /*==========================
         15.CONTACT US

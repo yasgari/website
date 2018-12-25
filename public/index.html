@@ -13,7 +13,7 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Yashar</title>
-        <meta name="description" content="Personal website for Yashar Asgari">
+        <meta name="description" content="The official personal website of Yashar Asgari. Includes personal interests, education and work experience, projects, personal blog, and how to get in touch.">
         <meta name="keywords" content="Yashar, yashar, Asgari, asgari">
         <meta name="author" content="Yashar Asgari">
 
@@ -182,7 +182,7 @@ firebase.initializeApp(config);
                                 <li class="list-inline-item mr-0 text-muted">Developer</li>
                                 <li class="list-inline-item mr-0 text-muted">Entrepreneur</li>
                             </ul>
-                            <p class="text-muted mt-3"> I'm a 21 year old student from Wilmington, NC who's always loved living near the beach. Its's serenity and beauty I find both compelling and soothing. I currently am a senior at UNC-Chapel Hill studying Computer Science and Business; the latter of which has made me an aspiring entrepreneur who always looks at problems people face to find impactful solutions. On a more personal note, I love travelling the world, listening to music (and discovering new music as well), am adventurous (going on long drives exploring new places is my thing), a foodie, and huge car buff. My plan is to update this site with new blog posts and travel updates- so I really appreciate you checking it out and encourage you to check back often!</p>
+                            <p class="text-muted mt-3"> I'm a 21 year old student from Wilmington, NC who's always loved living near the beach, where its serenity and beauty I find both compelling and soothing. I currently am a senior at UNC-Chapel Hill studying Computer Science and Business; the latter of which has made me an aspiring entrepreneur who always looks at problems people face to find impactful solutions. On a more personal note, I love travelling the world, listening to music (and discovering new music as well), am adventurous (going on long drives exploring new places is my thing), a foodie, into all types of history, and huge car buff. My plan is to update this site with new blog posts and travel updates- so I really appreciate you checking it out and encourage you to come back often!</p>
                         </div>
                     </div>
                 </div>
@@ -637,13 +637,14 @@ firebase.initializeApp(config);
                                 <div class="mt-3">
                                     <p class="font-weight-bold h6 mb-3"><a href="http://yasharasgari.com#blog" class="text-custom">Lifestyle</a></p>
                                     <p class="h6 text-muted date_blog mb-0">23 December 2018 |<a href="https://www.forbes.com/sites/ryanholiday/2012/04/19/9-timeless-leadership-lessons-from-cyrus-the-great/#7e5b035ab220" class="text-dark font-weight-bold" target = "_blank"> Forbes</a></p>
-                                    <p class="mt-3 desc_blog pl-2 pr-2 text-muted">The human experience is timeless. Although we've changed in many aspects over the last three millennia, it is amazing how much is still common and relevant between our ancestors and the modern day man.
+                                    <p class="mt-3 desc_blog pl-2 pr-2 text-muted">The human experience is timeless. Although we've changed in many aspects over the last three millennia, it is amazing how much is still common and relevant between our ancestors and the modern day man. <span id="dots">...</span><span id="more">
                                         
                                         I have always had an affinity for ancient history; mostly because of how disconnected the average personal feels to that time period, yet it is amazing how these quotes from one of the most influential leaders in human history can be implemented in anyone's life today. 
                                         My favorite quote from this article was one where Cyrus the Great talks about generosity <b>"Success always calls for greater generosity--though most people, lost in the darkness of their own egos, treat it as an occasion for greater greed. Collecting boot [is] not an end itself, but only a means for building [an] empire. Riches would be of little use to us now--except as a means of winning new friends."</b>
-                                        <br>I highly recommend this article by Ryan Holiday (in the link below) which contains great quotes regarding all facets of leadership and life advice.
+                                        <br>I highly recommend this article by Ryan Holiday (in the link titled 'Forbes' above) which contains great quotes regarding all facets of leadership and life advice. </span>
                                     </p>
-                                    <p class="h6 mb-0"><a href="https://www.forbes.com/sites/ryanholiday/2012/04/19/9-timeless-leadership-lessons-from-cyrus-the-great/#7e5b035ab220" class="text-muted font-weight-bold" target = "_blank"><i>"9 Timeless Leadership Lessons From Cyrus the Great"</i></a></p>
+                                    <button class="btn" onclick="showHide()" id="myBtn">Read more</button>   
+                                                                   
                                 </div>
                             </div>
                         </div>
@@ -662,7 +663,7 @@ firebase.initializeApp(config);
                                 </div>
                                 <div class="mt-3">
                                     <p class="font-weight-bold h6 mb-3"><a href="http://yasharasgari.com#blog" class="text-custom">Random</a></p>
-                                    <p class="h6 text-muted date_blog mb-0"> <p class = "h6 text-muted date_blog mb-0"id = "apod-date" style="display:inline"></p><a href="http://yasharasgari.com#blog" class="text-dark font-weight-bold">From NASA</a></p>
+                                    <p class="h6 text-muted date_blog mb-0"> <p class = "h6 text-muted date_blog mb-0"id = "apod-date" style="display:inline"></p><a href="https://apod.nasa.gov/apod/astropix.html" class="text-dark font-weight-bold" target ="_blank">From NASA</a></p>
                                     <p class="mt-3 desc_blog pl-2 pr-2 text-muted" id = "apod-title"></p>
                                     <p class="mt-3 desc_blog pl-2 pr-2 text-muted" id = "apod-desc"></p>
                                 </div>
@@ -858,7 +859,16 @@ firebase.initializeApp(config);
             $("#apod-vid").css("display", "none"); 
             $("#apod-img").attr("src", result.url);
         }
-        $("#apod-desc").text(result.explanation);
+
+        if(result.explanation.length > 200){
+            console.log('here')
+            var text = result.explanation;
+            html = text.slice(0,200) + "<span id='dots1'>...</span><span id='more1'>" + text.slice(200,result.explanation.length) + " <br><br> (Picture, title, and description courtesy of NASA) </span> <br><button class='btn' onclick='showHide1()' id='myBtn1'>Read more</button>"
+            $("#apod-desc").html(html)
+        }else{
+            $("#apod-desc").text(result.explanation);
+        }
+        
         $("#apod-title").text(result.title).css("font-weight", "bold");
         }
         });
@@ -885,6 +895,37 @@ firebase.initializeApp(config);
 
             document.getElementById("apod-date").innerHTML = today;
         
+
+            function showHide() {
+                var dots = document.getElementById("dots");
+                var moreText = document.getElementById("more");
+                var btnText = document.getElementById("myBtn");
+
+                if (dots.style.display === "none") {
+                    dots.style.display = "inline";
+                    btnText.innerHTML = "Read more"; 
+                    moreText.style.display = "none";
+                } else {
+                    dots.style.display = "none";
+                    btnText.innerHTML = "Read less"; 
+                    moreText.style.display = "inline";
+                }
+            }
+            function showHide1() {
+                var dots = document.getElementById("dots1");
+                var moreText = document.getElementById("more1");
+                var btnText = document.getElementById("myBtn1");
+
+                if (dots.style.display === "none") {
+                    dots.style.display = "inline";
+                    btnText.innerHTML = "Read more"; 
+                    moreText.style.display = "none";
+                } else {
+                    dots.style.display = "none";
+                    btnText.innerHTML = "Read less"; 
+                    moreText.style.display = "inline";
+                }
+            }
     </script>
     
     </body>
