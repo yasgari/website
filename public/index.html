@@ -643,7 +643,7 @@ firebase.initializeApp(config);
                                         My favorite quote from this article was one where Cyrus the Great talks about generosity <b>"Success always calls for greater generosity--though most people, lost in the darkness of their own egos, treat it as an occasion for greater greed. Collecting boot [is] not an end itself, but only a means for building [an] empire. Riches would be of little use to us now--except as a means of winning new friends."</b>
                                         <br>I highly recommend this article by Ryan Holiday (in the link titled 'Forbes' above) which contains great quotes regarding all facets of leadership and life advice. </span>
                                     </p>
-                                    <button class="btn" onclick="showHide()" id="myBtn">Read more</button>   
+                                    <button class="btn" onclick="showHide(0)" id="myBtn">Read more</button>   
                                                                    
                                 </div>
                             </div>
@@ -843,7 +843,7 @@ firebase.initializeApp(config);
         </script>
 
 <script>
-        //use personal api key frmo NASA
+        //personal api key from NASA
         var url = "https://api.nasa.gov/planetary/apod?api_key=yglJoznE7Osis22NQXPemBVHtvbNYFYXf3jR7cyC";
 
 
@@ -863,7 +863,7 @@ firebase.initializeApp(config);
         if(result.explanation.length > 200){
             console.log('here')
             var text = result.explanation;
-            html = text.slice(0,200) + "<span id='dots1'>...</span><span id='more1'>" + text.slice(200,result.explanation.length) + " <br><br> (Picture, title, and description courtesy of NASA) </span> <br><button class='btn' onclick='showHide1()' id='myBtn1'>Read more</button>"
+            html = text.slice(0,200) + "<span id='dots1'>...</span><span id='more1'>" + text.slice(200,result.explanation.length) + " <br><br> (Picture, title, and description courtesy of NASA) </span> <br><button class='btn' onclick='showHide(1)' id='myBtn1'>Read more</button>"
             $("#apod-desc").html(html)
         }else{
             $("#apod-desc").text(result.explanation);
@@ -877,7 +877,7 @@ firebase.initializeApp(config);
             console.log('function')
             var today = new Date();
             var dd = today.getDate();
-            var mm = today.getMonth(); //January is 0!
+            var mm = today.getMonth();
             var yyyy = today.getFullYear();
 
             if(dd<10) {
@@ -895,26 +895,19 @@ firebase.initializeApp(config);
 
             document.getElementById("apod-date").innerHTML = today;
         
-
-            function showHide() {
-                var dots = document.getElementById("dots");
-                var moreText = document.getElementById("more");
-                var btnText = document.getElementById("myBtn");
-
-                if (dots.style.display === "none") {
-                    dots.style.display = "inline";
-                    btnText.innerHTML = "Read more"; 
-                    moreText.style.display = "none";
-                } else {
-                    dots.style.display = "none";
-                    btnText.innerHTML = "Read less"; 
-                    moreText.style.display = "inline";
+            /**
+             * arg "num" is integer denoting the correct id corresponding to a new blog post 
+             **/
+            function showHide(num) {
+                if(num == 0){
+                    var dots = document.getElementById("dots");
+                    var moreText = document.getElementById("more");
+                    var btnText = document.getElementById("myBtn");
+                }else{
+                    var dots = document.getElementById("dots"+num);
+                    var moreText = document.getElementById("more"+num);
+                    var btnText = document.getElementById("myBtn"+num);
                 }
-            }
-            function showHide1() {
-                var dots = document.getElementById("dots1");
-                var moreText = document.getElementById("more1");
-                var btnText = document.getElementById("myBtn1");
 
                 if (dots.style.display === "none") {
                     dots.style.display = "inline";
