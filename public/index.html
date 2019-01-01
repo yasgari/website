@@ -450,7 +450,7 @@ firebase.initializeApp(config);
                                                 <li>Designed and implemented a fully functional backend using MongoDB to store experiment results</li> 
                                                 <li>Constructed the "search" page connecting the implemented database with a client-side page to accept various queries to retrieve data for users.</li>
                                                 <li>Search page also utilizes plotly.js for plotting/visualizing experiment data and Bootstrap for webpage layout and tables.</li>
-                                                <li>Constructed the "browser" pages for various organisms that utilizes IGV.js Genome Browser</li>
+                                                <li>Constructed the "browser" pages for various organisms that utilizes IGV.js Genome Browser to visualize experiment results</li>
                                             </ul>
                                             </p>
                                         </div>
@@ -465,7 +465,13 @@ firebase.initializeApp(config);
                                         <div class="cb_edu_exp_detail">
                                             <h4>Technical Sales Engineer Intern</h4>
                                             <p class="cv_desc mb-0">Worked at Cisco Systems for two consecutive summers as a technical sales/field sales engineer intern<br>
-                                                Recently accepted a full time role into Cisco's Certified Sales Associate Program that will begin in the Summer of 2019 </p>
+                                                <ul>
+                                                    <li>Worked extensively in teams to provide actionable account insights for Cisco customers </li>
+                                                    <li>Gained extensive technical training in Cisco products</li>
+                                                    <li>Participated in and won a global hackathon with fellow SE interns.</li>
+                                                </ul>
+                                                Recently accepted a full time role into Cisco's Certified Sales Associate Program that will begin in the Summer of 2019 
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -478,7 +484,7 @@ firebase.initializeApp(config);
         <!-- END EXP. & EDU. -->
 
         <!-- START CTA -->
-        <!-- <section class="section bg-cta">
+        <section class="section bg-cta">
             <div class="bg-overlay"></div>
             <div class="container">
                 <div class="row">
@@ -486,13 +492,13 @@ firebase.initializeApp(config);
                         <div class="text-center text-white">
                             <h1>I Am Available For Freelance Developing.</h1>
                             <div class="mt-4">
-                                <a href="http://yasharasgari.com#" class="btn btn-outline-custom">Hire Me!</a>
+                                <a href="mailto:yasharasgari97@gmail.com" class="btn btn-outline-custom">Reach out! Let's see what I can do for you</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
         <!-- END CTA -->
 
         <!--START WORK -->   
@@ -878,15 +884,16 @@ firebase.initializeApp(config);
             var today = new Date();
             var dd = today.getDate();
             var mm = today.getMonth();
+            
             var yyyy = today.getFullYear();
 
             if(dd<10) {
                 dd = '0'+dd
             } 
 
-            if(mm<10) {
-                mm = '0'+mm
-            } 
+            // if(mm<10) {
+            //     mm = '0'+mm
+            // } 
 
             const monthNames = ["January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"
@@ -919,6 +926,7 @@ firebase.initializeApp(config);
                     moreText.style.display = "inline";
                 }
             }
+
     </script>
     
     </body>
